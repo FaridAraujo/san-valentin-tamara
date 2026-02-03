@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    border-radius: 28px;
+    padding: 45px;
+    text-align: center;
+    width: 360px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    animation: fadeIn 1.3s ease;
+}
+
+.card h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #4fc3f7;
+    color: #003c6e;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#noBtn {
+    background: #bbdefb;
+}
+
+.question h1 {
+    font-size: 26px;
+}
+
+.final h1 {
+    font-size: 28px;
+}
+
+/* Corazones */
+.heart {
+    position: absolute;
+    font-size: 22px;
+    animation: float 4s linear infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-900px);
+        opacity: 0;
+    }
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        padding: 30px 22px;
+    }
+
+    .card h1 {
+        font-size: 24px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+}
+
+
+/* CARTA FINAL */
+.letter {
+  background: #f9fbff;
+  color: #0a2540;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeUp 1.2s ease;
+}
+
+.letter h1 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.letter p {
+  text-align: left;
+  font-size: 1.05em;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.signature {
+  text-align: right;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
