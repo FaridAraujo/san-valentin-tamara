@@ -1,27 +1,1185 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Tamara 💙</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Ti ✨</title>
+
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+
 </head>
+
 <body>
 
-    <div class="card intro" id="card">
-        <h1>💙 Piciosa Mía 💙</h1>
-        <p>
-            No hice esto porque fuera San Valentín,<br>
-            lo hice porque sos vos.<br><br>
-            Y porque tú siempre,<br>
-            Vas a merecer algo especial 💙
-        </p>
+    <div class="background"></div>
 
-        <button id="nextBtn">Empezar ✨</button>
+    <!-- Welcome Screen -->
+    <!-- Reemplaza tu section id="welcome" con esto -->
+    <section id="welcome" class="screen active">
+        <div class="welcome-container">
+
+            <!-- Partículas de luz -->
+            <div class="light-particles">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="welcome-content">
+
+                <!-- Corazón animado arriba -->
+                <div class="animated-heart">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <path
+                            d="M50,90 C50,90 10,60 10,40 C10,25 20,15 30,15 C40,15 50,25 50,25 C50,25 60,15 70,15 C80,15 90,25 90,40 C90,60 50,90 50,90 Z"
+                            fill="#ff4d6d" class="heart-path" />
+                    </svg>
+                </div>
+
+                <!-- Texto con animaciones -->
+                <h1 class="main-title">
+                    <span class="title-line line-1">Para vos,</span>
+                    <span class="title-line line-2">mi San Valentín hermosa</span>
+                    <span class="title-line line-3">❤️</span>
+                </h1>
+
+                <div class="divider"></div>
+
+                <p class="welcome-message">
+                    <span class="message-part part-1">Hice esto con todo mi corazón,</span>
+                    <span class="message-part part-2">solo para recordarte</span>
+                    <span class="message-part part-3">lo especial que sos para mí.</span>
+                </p>
+
+                <!-- Botón mejorado -->
+                <button class="welcome-btn-new" onclick="showScreen('menu')">
+                    <span class="btn-text">Abrilo con cuidadito</span>
+                    <span class="btn-icon">💌</span>
+                    <div class="btn-shine"></div>
+                </button>
+
+                <!-- Scroll indicator -->
+                <div class="scroll-hint">
+                    <span>✨</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Menu -->
+    <!-- Reemplaza tu section id="menu" con esto -->
+    <section id="menu" class="screen">
+        <div class="menu-container">
+            <!-- AGREGA ESTE DIV WRAPPER -->
+            <div class="menu-inner">
+
+                <!-- Título animado -->
+                <div class="menu-header">
+                    <h1 class="menu-title">
+                        <span class="title-word">Sorpresas</span>
+                        <span class="title-word">para</span>
+                        <span class="title-word">Ti</span>
+                        <span class="title-heart">💕</span>
+                    </h1>
+                    <p class="menu-subtitle">Elige un sobre para descubrir tu regalo</p>
+                    <div class="header-divider"></div>
+                </div>
+
+                <!-- Grid de sobres mejorado -->
+                <div class="envelopes-grid">
+
+                    <!-- SOBRE 1 - Nosotros -->
+                    <div class="envelope-card" onclick="openEnvelopeNew(this, 'letter', 1)">
+                        <div class="envelope-shine"></div>
+                        <div class="envelope-glow"></div>
+
+                        <div class="envelope-3d">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-body">
+                                <div class="envelope-icon">💌</div>
+                            </div>
+                        </div>
+
+                        <div class="envelope-label-top">Nosotros</div>
+
+                        <div class="envelope-info">
+                            <h3>Nuestra Historia</h3>
+                            <p>O una parte de ella</p>
+                        </div>
+                    </div>
+
+                    <!-- SOBRE 2 - Momentos -->
+                    <div class="envelope-card" onclick="openEnvelopeNew(this, 'gallery', 2)">
+                        <div class="envelope-shine"></div>
+                        <div class="envelope-glow"></div>
+
+                        <div class="envelope-3d">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-body">
+                                <div class="envelope-icon">💌</div>
+                            </div>
+                        </div>
+
+                        <div class="envelope-label-top">Nuestros Momentos</div>
+
+                        <div class="envelope-info">
+                            <h3>Fotos 📸</h3>
+                            <p>Recuerdos juntos</p>
+                        </div>
+                    </div>
+
+                    <!-- SOBRE 3 - Contador -->
+                    <div class="envelope-card" onclick="openEnvelopeNew(this, 'counter', 3)">
+                        <div class="envelope-shine"></div>
+                        <div class="envelope-glow"></div>
+
+                        <div class="envelope-3d">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-body">
+                                <div class="envelope-icon">💌</div>
+                            </div>
+                        </div>
+
+                        <div class="envelope-label-top">Nuestro Tiempo</div>
+
+                        <div class="envelope-info">
+                            <h3>Contador 💖</h3>
+                            <p>Juntos desde...</p>
+                        </div>
+                    </div>
+
+                    <!-- SOBRE 4 - Cupón -->
+                    <div class="envelope-card" onclick="openEnvelopeNew(this, 'coupon', 4)">
+                        <div class="envelope-shine"></div>
+                        <div class="envelope-glow"></div>
+
+                        <div class="envelope-3d">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-body">
+                                <div class="envelope-icon">💌</div>
+                            </div>
+                        </div>
+
+                        <div class="envelope-label-top">Cupón Secreto</div>
+
+                        <div class="envelope-info">
+                            <h3>Ya no tan secreto</h3>
+                            <p>Un regalo especial</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Separador decorativo -->
+                <div class="memory-divider">
+                    <div class="divider-line"></div>
+                    <span class="divider-text">Recuerdos ✨</span>
+                    <div class="divider-line"></div>
+                </div>
+
+                <!-- TICKET DE RECUERDO -->
+                <div class="ticket-container">
+                    <div class="ticket-memory" onclick="openTicket(this)">
+                        <!-- Perforaciones izquierda -->
+                        <div class="ticket-perforations left">
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                        </div>
+
+                        <!-- Contenido del ticket -->
+                        <div class="ticket-content">
+                            <div class="ticket-header">
+                                <span class="ticket-icon">💙</span>
+                                <h3>PETICIÓN ESPECIAL</h3>
+                                <span class="ticket-icon">💙</span>
+                            </div>
+
+                            <div class="ticket-event">
+                                San Valentín 2025
+                            </div>
+
+                            <div class="ticket-date">
+                                14 de Febrero
+                            </div>
+
+                            <div class="ticket-status">
+                                <span class="status-badge">✓ ACEPTADO</span>
+                            </div>
+
+                            <div class="ticket-code">
+                                #SV2025-AMOR
+                            </div>
+
+                            <div class="ticket-message">
+                                Ella dijo que sí 💙
+                            </div>
+                        </div>
+
+                        <!-- Perforaciones derecha -->
+                        <div class="ticket-perforations right">
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                            <span class="perf"></span>
+                        </div>
+
+                        <!-- Efecto de sombra/profundidad -->
+                        <div class="ticket-shadow"></div>
+                    </div>
+                </div>
+
+                <!-- Decoración flotante -->
+                <div class="floating-hearts">
+                    <span class="float-heart">💕</span>
+                    <span class="float-heart">✨</span>
+                    <span class="float-heart">💖</span>
+                    <span class="float-heart">🌟</span>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Gallery -->
+    <!-- Reemplaza tu section id="gallery" -->
+    <section id="gallery" class="screen">
+        <div class="gallery-container">
+
+            <!-- Header elegante -->
+            <div class="gallery-header">
+                <div class="header-icon">✨</div>
+                <h1 class="gallery-title">Nuestros Momentos</h1>
+                <p class="gallery-subtitle">Cada foto cuenta una historia de amor</p>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Grid de fotos estilo polaroid mejorado -->
+            <div class="photos-grid-new">
+                <div class="photo-polaroid" data-index="1">
+                    <div class="polaroid-frame">
+                        <img src="img/foto1.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Momento especial 💕</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="2">
+                    <div class="polaroid-frame">
+                        <img src="img/foto2.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Juntos ❤️</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="3">
+                    <div class="polaroid-frame">
+                        <img src="img/foto3.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Sonrisas 😊</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="4">
+                    <div class="polaroid-frame">
+                        <img src="img/foto4.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Por siempre 💖</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="5">
+                    <div class="polaroid-frame">
+                        <img src="img/foto5.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Aventuras ✈️</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="6">
+                    <div class="polaroid-frame">
+                        <img src="img/foto6.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Amor puro 💕</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="7">
+                    <div class="polaroid-frame">
+                        <img src="img/foto7.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Felicidad 🌟</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="8">
+                    <div class="polaroid-frame">
+                        <img src="img/foto8.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Recuerdos 📸</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="9">
+                    <div class="polaroid-frame">
+                        <img src="img/foto9.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Nosotros 💑</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="10">
+                    <div class="polaroid-frame">
+                        <img src="img/foto10.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Momentos 🎉</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="11">
+                    <div class="polaroid-frame">
+                        <img src="img/foto11.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Cómplices 🤝</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="12">
+                    <div class="polaroid-frame">
+                        <img src="img/foto12.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Conexión 💫</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="13">
+                    <div class="polaroid-frame">
+                        <img src="img/foto13.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Risas 😂</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="14">
+                    <div class="polaroid-frame">
+                        <img src="img/foto14.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Nuestro lugar 🏠</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="15">
+                    <div class="polaroid-frame">
+                        <img src="img/foto15.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Abrazos 🤗</div>
+                    </div>
+                </div>
+
+                <div class="photo-polaroid" data-index="16">
+                    <div class="polaroid-frame">
+                        <img src="img/foto16.jpeg" alt="Nosotros">
+                        <div class="polaroid-caption">Para siempre ∞</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje especial -->
+            <div class="gallery-footer">
+                <p class="gallery-message">
+                    16 fotos, infinitos recuerdos, un solo amor 💕
+                </p>
+            </div>
+
+            <button onclick="showScreen('menu')" class="back-btn-new">
+                <span>← Volver al Menú</span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Letter -->
+    <section id="letter" class="screen">
+        <div class="card wide letter-card">
+
+            <h1 style="margin-bottom: 30px;">Nuestra Historia 💕</h1>
+
+            <!-- 📖 LIBRO 3D -->
+            <div class="book-container">
+                <div class="book-3d" id="book3d">
+
+                    <!-- TAPA FRONTAL -->
+                    <div class="book-cover front">
+                        <div class="cover-content">
+                            <h2>Nosotros</h2>
+                            <p>Una historia escrita con amor</p>
+                            <div class="heart-icon">💕</div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINAS DEL LIBRO -->
+                    <div class="book-pages" id="bookPages">
+
+                        <!-- PÁGINA 1 - CARTA -->
+                        <div class="book-page" data-page="1">
+                            <div class="page-front">
+                                <div class="page-content-inner">
+                                    <h3>Mi Amor</h3>
+                                    <div id="typedText" class="letter-text"></div>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">✨</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 2 - FOTOS -->
+                        <div class="book-page" data-page="2">
+                            <div class="page-front">
+                                <div class="page-content-inner">
+                                    <h3>Momentos que Atesoro 📸</h3>
+                                    <div class="mini-gallery-book">
+                                        <img src="img/foto1.jpeg" alt="Momento 1">
+                                        <img src="img/foto5.jpeg" alt="Momento 2">
+                                        <img src="img/foto9.jpeg" alt="Momento 3">
+                                        <img src="img/foto12.jpeg" alt="Momento 4">
+                                    </div>
+                                    <p
+                                        style="margin-top: 15px; font-size: 0.9rem; color: #4a1f2d; text-align: center; font-style: italic;">
+                                        Cada foto es un recuerdo que guardo en mi corazón 💕
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">📷</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 3 - RAZONES -->
+                        <div class="book-page" data-page="3">
+                            <div class="page-front">
+                                <div class="page-content-inner">
+                                    <h3>
+                                        ¿Por qué te amo?<br>
+                                        ¿Por qué?
+                                    </h3>
+                                    <div class="reasons-list">
+                                        <p>Porque...</p>
+                                        <p>Simplemente por ser tú</p>
+                                        <p>Tienes un corazón muy lindo</p>
+                                        <p>Tu forma de amar me encanta</p>
+                                        <p>Sos la niña melón(chiquita)</p>
+                                        <p>Eres HERMOSA</p>
+                                        <p>Me encantan tu carita, tus ojitos, tu nariz, tus cachetitos, tu pelito, TODO</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">💝</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 4 - PROMESAS -->
+                        <div class="book-page" data-page="4">
+                            <div class="page-front">
+                                <div class="page-content-inner">
+                                    <h3>Mis Promesas para Ti 🌹</h3>
+                                    <div class="promises-text">
+                                        <p>Prometo amarte cada día más que el anterior.</p>
+                                        <p>Prometo estar a tu lado en las buenas y en las malas.</p>
+                                        <p>Prometo hacerte reír cuando estés triste.</p>
+                                        <p>Prometo apoyarte en todos tus sueños.</p>
+                                        <p>Prometo construir un futuro hermoso contigo.</p>
+                                        <p>Prometo no dejarte hacer drama.</p>
+                                        <p class="final-promise">Y prometo amarte mucho. 💕</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">🌹</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 5 - EPÍLOGO -->
+                        <div class="book-page" data-page="5">
+                            <div class="page-front">
+                                <div class="page-content-inner epilogue-page">
+                                    <h3>Epílogo</h3>
+                                    <div class="epilogue-content">
+                                        <p class="epilogue-text">
+                                            Esta no es la primera vez<br>
+                                            que te escribo una carta...
+                                        </p>
+                                        <p class="epilogue-date">
+                                            20 de Julio, 2023
+                                        </p>
+                                        <p class="epilogue-question">
+                                            ¿Querés ver dónde comenzó todo?
+                                        </p>
+                                        <button class="open-first-letter-btn" onclick="openFirstLetter()">
+                                            📖 Abrir nuestra primera carta
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">💌</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- TAPA TRASERA -->
+                    <div class="book-cover back">
+                        <div class="cover-content">
+                            <div class="heart-icon">❤️</div>
+                            <p>Para siempre</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTROLES -->
+            <div class="book-navigation">
+                <!-- ✅ AGREGA ESTO AQUÍ -->
+                <button id="oldLetterButton" class="gallery-btn hidden" onclick="showScreen('oldLetter')"
+                    style="margin-bottom: 20px;">
+                    Ver nuestra primera carta 💌
+                </button>
+                <!-- FIN DE LO QUE AGREGAS -->
+
+                <button onclick="previousPage()" class="nav-btn" id="prevBtn" disabled>
+                    ⬅ Anterior
+                </button>
+
+                <div class="page-indicator" id="pageIndicator">
+                    Toca el libro para abrir
+                </div>
+
+                <button onclick="nextPage()" class="nav-btn" id="nextBtn">
+                    Siguiente ➡
+                </button>
+            </div>
+
+            <button onclick="showScreen('menu')" class="back-btn-new">
+                <span>← Volver al Menú</span>
+            </button>
+
+        </div>
+    </section>
+
+
+
+    <!-- Counter -->
+    <!-- Reemplaza tu section id="counter" -->
+    <section id="counter" class="screen">
+        <div class="counter-container">
+
+            <!-- Header -->
+            <div class="counter-header">
+                <div class="infinity-symbol">∞</div>
+                <h1 class="counter-title">Nuestro Tiempo Juntos</h1>
+                <p class="counter-subtitle">Cada segundo cuenta cuando estoy contigo</p>
+                <div class="counter-date">Desde el 20 de Junio, 2023</div>
+            </div>
+
+            <!-- Contador épico -->
+            <div class="epic-counter-new">
+                <div class="counter-item">
+                    <div class="counter-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring-bg" cx="70" cy="70" r="60" />
+                            <circle class="progress-ring-fill" cx="70" cy="70" r="60" />
+                        </svg>
+                        <div class="counter-content">
+                            <span id="years" class="counter-number">0</span>
+                            <p class="counter-label">Años</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring-bg" cx="70" cy="70" r="60" />
+                            <circle class="progress-ring-fill" cx="70" cy="70" r="60" />
+                        </svg>
+                        <div class="counter-content">
+                            <span id="months" class="counter-number">0</span>
+                            <p class="counter-label">Meses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring-bg" cx="70" cy="70" r="60" />
+                            <circle class="progress-ring-fill" cx="70" cy="70" r="60" />
+                        </svg>
+                        <div class="counter-content">
+                            <span id="days" class="counter-number">0</span>
+                            <p class="counter-label">Días</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring-bg" cx="70" cy="70" r="60" />
+                            <circle class="progress-ring-fill" cx="70" cy="70" r="60" />
+                        </svg>
+                        <div class="counter-content">
+                            <span id="hours" class="counter-number">0</span>
+                            <p class="counter-label">Horas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring-bg" cx="70" cy="70" r="60" />
+                            <circle class="progress-ring-fill" cx="70" cy="70" r="60" />
+                        </svg>
+                        <div class="counter-content">
+                            <span id="minutes" class="counter-number">0</span>
+                            <p class="counter-label">Minutos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-item">
+                    <div class="counter-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring-bg" cx="70" cy="70" r="60" />
+                            <circle class="progress-ring-fill" cx="70" cy="70" r="60" />
+                        </svg>
+                        <div class="counter-content">
+                            <span id="seconds" class="counter-number">0</span>
+                            <p class="counter-label">Segundos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje romántico -->
+            <div class="counter-message">
+                <p>Y contando... 💕</p>
+            </div>
+
+            <button onclick="showScreen('menu')" class="back-btn-new">
+                <span>← Volver al Menú</span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Coupon -->
+    <!-- Reemplaza tu section id="coupon" -->
+    <!-- Reemplaza tu section id="coupon" -->
+    <section id="coupon" class="screen">
+        <div class="coupon-container">
+            <!-- AGREGAR ESTE WRAPPER -->
+            <div class="coupon-inner">
+
+                <!-- Header -->
+                <div class="coupon-header">
+                    <div class="gift-icon">💝</div>
+                    <h1 class="coupon-title">Cupones Especiales</h1>
+                    <p class="coupon-subtitle">Regalos hechos con amor 💕</p>
+                </div>
+
+                <!-- Cupones Grid -->
+                <div class="coupons-grid">
+
+                    <!-- CUPÓN 1 - Ya Canjeado (Burrito) -->
+                    <div class="coupon-item redeemed">
+                        <div class="coupon-stamp">CANJEADO ✓</div>
+                        <div class="coupon-mini-card">
+                            <div class="coupon-mini-icon">🌯</div>
+                            <h3>Pink Burrito</h3>
+                            <p class="coupon-status">Ya disfrutado 😋</p>
+                            <div class="redeemed-date">15 de Febrero 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- CUPÓN 2 - Ya Canjeado (Masaje) -->
+                    <div class="coupon-item redeemed">
+                        <div class="coupon-stamp">CANJEADO ✓</div>
+                        <div class="coupon-mini-card">
+                            <div class="coupon-mini-icon">💆‍♀️</div>
+                            <h3>Masaje Completo</h3>
+                            <p class="coupon-status">Ya relajada 😌</p>
+                            <div class="redeemed-date">14 de Febrero 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- CUPÓN 3 - ACTIVO (Cupón del Amor) -->
+                    <div class="coupon-item active-coupon">
+                        <div class="coupon-glow-effect"></div>
+                        <div class="coupon-shine-effect"></div>
+
+                        <div class="vip-love-coupon">
+
+                            <!-- Sello ESPECIAL -->
+                            <div class="coupon-seal-special">
+                                <div class="seal-circle-special">
+                                    <span class="seal-icon-special">💕</span>
+                                    <div class="seal-text-special">AMOR</div>
+                                </div>
+                            </div>
+
+                            <!-- Título -->
+                            <div class="love-coupon-header">
+                                <div class="heart-burst">💖</div>
+                                <h2>Cupón del Amor Eterno</h2>
+                                <div class="header-line"></div>
+                            </div>
+
+                            <!-- Contenido -->
+                            <div class="love-coupon-content">
+                                <p class="love-intro">Este cupón especial incluye:</p>
+
+                                <ul class="love-benefits">
+                                    <li>
+                                        <span class="love-icon"></span>
+                                        <span>Amor que nunca falte</span>
+                                    </li>
+                                    <li>
+                                        <span class="love-icon"></span>
+                                        <span>Abrazos siempre</span>
+                                    </li>
+                                    <li>
+                                        <span class="love-icon"></span>
+                                        <span>Muchos besos</span>
+                                    </li>
+                                    <li>
+                                        <span class="love-icon"></span>
+                                        <span>Muchisimas Risas</span>
+                                    </li>
+                                </ul>
+
+                                <!-- Validez especial -->
+                                <div class="love-validity">
+                                    <div class="validity-box">
+                                        <span class="validity-icon">♾️</span>
+                                        <div class="validity-info">
+                                            <p class="validity-title">Validez</p>
+                                            <p class="validity-value">PARA SIEMPRE</p>
+                                        </div>
+                                    </div>
+                                    <div class="validity-box">
+                                        <span class="validity-icon">∞</span>
+                                        <div class="validity-info">
+                                            <p class="validity-title">Usos</p>
+                                            <p class="validity-value">ILIMITADOS</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Código especial -->
+                                <div class="love-code-section">
+                                    <p class="code-label-love">Código del cupón:</p>
+                                    <div class="love-code-box">
+                                        <span class="love-code-text">AMOR-INFINITO</span>
+                                    </div>
+                                </div>
+
+                                <!-- Mensaje final -->
+                                <div class="love-final-message">
+                                    <p>"Este cupón nunca expira porque mi amor por vos es eterno"</p>
+                                </div>
+
+                                <!-- Botón de guardar -->
+                                <button class="save-love-btn" onclick="saveLoveCoupon()">
+                                    <span>💝</span>
+                                    <span>Guardar en mi Corazón</span>
+                                    <span>💝</span>
+                                </button>
+
+                            </div>
+
+                            <!-- Decoración -->
+                            <div class="corner-deco corner-tl"></div>
+                            <div class="corner-deco corner-tr"></div>
+                            <div class="corner-deco corner-bl"></div>
+                            <div class="corner-deco corner-br"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Nota especial -->
+                <div class="coupon-special-note">
+                    <p>💌 Los primeros dos ya los disfrutaste, pero este es el más importante 💌</p>
+                </div>
+
+                <button onclick="showScreen('menu')" class="back-btn-new">
+                    <span>← Volver al Menú</span>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 💭 Pantalla desbloqueo -->
+    <section id="memoryUnlock" class="screen">
+        <div class="card wide">
+
+            <h1>Esto de las cartas</h1>
+            <p>
+                Me recuerda a algo muy especial…<br>
+                ¿a vos no?
+            </p>
+
+            <button onclick="showScreen('oldLetter')" class="btn">
+                Ver nuestra primera carta 💌
+            </button>
+
+        </div>
+    </section>
+
+    <!-- 💌 Primera Carta (Segundo Libro) -->
+    <section id="oldLetter" class="screen">
+        <div class="card wide letter-card">
+
+            <h1 style="margin-bottom: 30px;">Donde Todo Comenzó 💌</h1>
+            <p class="first-letter-date">20 de Julio, 2023 - Nuestro primer mes</p>
+
+            <!-- 📖 LIBRO VINTAGE -->
+            <div class="book-container">
+                <div class="book-3d vintage-book" id="vintageBook">
+
+                    <!-- TAPA FRONTAL VINTAGE -->
+                    <div class="book-cover front vintage-cover">
+                        <div class="cover-content">
+                            <h2>Para Ti</h2>
+                            <p>Julio 2023</p>
+                            <div class="heart-icon">💕</div>
+                            <p class="vintage-subtitle">Mes 1</p>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINAS DEL LIBRO VINTAGE -->
+                    <div class="book-pages" id="vintageBookPages">
+
+                        <!-- PÁGINA 1 -->
+                        <div class="book-page" data-page="1">
+                            <div class="page-front">
+                                <div class="page-content-inner vintage-page">
+                                    <div id="vintageLetter1" class="vintage-letter-text"></div>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">✨</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 2 -->
+                        <div class="book-page" data-page="2">
+                            <div class="page-front">
+                                <div class="page-content-inner vintage-page">
+                                    <div id="vintageLetter2" class="vintage-letter-text"></div>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">💕</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 3 -->
+                        <div class="book-page" data-page="3">
+                            <div class="page-front">
+                                <div class="page-content-inner vintage-page">
+                                    <div id="vintageLetter3" class="vintage-letter-text"></div>
+                                </div>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-content-inner">
+                                    <div class="page-decoration">❤️</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- TAPA TRASERA VINTAGE -->
+                    <div class="book-cover back vintage-cover">
+                        <div class="cover-content">
+                            <div class="heart-icon">💌</div>
+                            <p>El comienzo</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTROLES VINTAGE -->
+            <div class="book-navigation">
+                <button onclick="previousVintagePage()" class="nav-btn" id="vintagePrevBtn" disabled>
+                    ⬅ Anterior
+                </button>
+
+                <div class="page-indicator" id="vintagePageIndicator">
+                    Toca el libro para abrir
+                </div>
+
+                <button onclick="nextVintagePage()" class="nav-btn" id="vintageNextBtn">
+                    Siguiente ➡
+                </button>
+            </div>
+
+            <div class="vintage-timeline">
+                <div class="timeline-point">
+                    <span class="timeline-icon">📅</span>
+                    <p>Mes 1</p>
+                </div>
+                <div class="timeline-line"></div>
+                <div class="timeline-point current">
+                    <span class="timeline-icon">💕</span>
+                    <p>Año 3</p>
+                </div>
+            </div>
+
+            <button onclick="showScreen('letter')" class="back-menu" style="margin-top: 30px;">
+                Volver 💖
+            </button>
+
+            <!-- NUEVO: Botón para ver PDF original -->
+            <button onclick="openPdfModal()" class="view-pdf-btn">
+                📜 Ver Carta Original en PDF
+            </button>
+
+        </div>
+    </section>
+
+    <!-- NUEVO: Modal del PDF -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-overlay" onclick="closePdfModal()"></div>
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h2>📜 Carta Original - Julio 2023</h2>
+                <button class="pdf-close-btn" onclick="closePdfModal()">✕</button>
+            </div>
+            <div class="pdf-frame-container">
+                <iframe id="pdfIframe" src="cartita.pdf" class="pdf-iframe"></iframe>
+            </div>
+            <div class="pdf-modal-footer">
+                <p>💕 La carta que comenzó todo 💕</p>
+            </div>
+        </div>
     </div>
 
-    <audio id="music" src="musica/billie.mp3"></audio>
+    </div>
+    </section>
 
-    <script src="script.js"></script>
+    </section>
+
+    <!-- 💙 PETICIÓN DE SAN VALENTÍN -->
+    <!-- 💙 PETICIÓN DE SAN VALENTÍN -->
+    <section id="petition" class="screen">
+        <!-- Fondo decorativo -->
+        <div class="petition-bg-decor">
+            <!-- Polaroids flotantes -->
+            <div class="floating-polaroid" style="top: 10%; left: 8%; animation-delay: 0s;">
+                <div class="polaroid-frame-decor">
+                    <div class="polaroid-img">📸</div>
+                    <p>Primer beso</p>
+                </div>
+            </div>
+
+            <div class="floating-polaroid" style="top: 15%; right: 10%; animation-delay: 0.5s;">
+                <div class="polaroid-frame-decor">
+                    <div class="polaroid-img">💕</div>
+                    <p>Nuestro lugar</p>
+                </div>
+            </div>
+
+            <div class="floating-polaroid" style="bottom: 15%; left: 12%; animation-delay: 1s;">
+                <div class="polaroid-frame-decor">
+                    <div class="polaroid-img">🌟</div>
+                    <p>Risas juntos</p>
+                </div>
+            </div>
+
+            <div class="floating-polaroid" style="bottom: 20%; right: 8%; animation-delay: 1.5s;">
+                <div class="polaroid-frame-decor">
+                    <div class="polaroid-img">✨</div>
+                    <p>Para siempre</p>
+                </div>
+            </div>
+
+            <!-- Stickers decorativos -->
+            <div class="sticker sticker-heart" style="top: 25%; left: 5%;">💙</div>
+            <div class="sticker sticker-star" style="top: 40%; right: 6%;">⭐</div>
+            <div class="sticker sticker-flower" style="bottom: 35%; left: 7%;">🌸</div>
+            <div class="sticker sticker-sparkle" style="bottom: 45%; right: 10%;">✨</div>
+
+            <!-- Notas adhesivas -->
+            <div class="sticky-note" style="top: 60%; left: 8%;">
+                <p>Te amo 💙</p>
+            </div>
+
+            <div class="sticky-note" style="top: 70%; right: 9%;">
+                <p>Mi persona<br>favorita</p>
+            </div>
+
+            <!-- Confeti sutil -->
+            <div class="confetti-container">
+                <div class="confetti" style="left: 15%; animation-delay: 0s;">💫</div>
+                <div class="confetti" style="left: 30%; animation-delay: 0.5s;">✨</div>
+                <div class="confetti" style="left: 50%; animation-delay: 1s;">💕</div>
+                <div class="confetti" style="left: 70%; animation-delay: 1.5s;">💙</div>
+                <div class="confetti" style="left: 85%; animation-delay: 2s;">⭐</div>
+            </div>
+        </div>
+
+        <!-- Contenedor principal tipo álbum -->
+        <div class="album-container">
+            <!-- Página principal -->
+            <div class="album-page">
+                <!-- Clips decorativos -->
+                <div class="photo-clip" style="top: -10px; left: 30px;">📎</div>
+                <div class="photo-clip" style="top: -10px; right: 30px;">📎</div>
+                <div class="photo-clip" style="bottom: -10px; left: 40px;">📎</div>
+                <div class="photo-clip" style="bottom: -10px; right: 40px;">📎</div>
+
+                <!-- Contenido de la petición -->
+                <div class="petition-card petition-intro" id="petitionCard">
+                    <h1>💙 Piciosa Mía 💙</h1>
+                    <p>
+                        No hice esto porque fuera San Valentín,<br>
+                        lo hice porque sos vos.<br><br>
+                        Y porque tú siempre,<br>
+                        Vas a merecer algo especial 💙
+                    </p>
+
+                    <button class="petition-btn" id="petitionNextBtn">Empezar ✨</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Corazones flotantes -->
+        <div id="petitionHearts"></div>
+    </section>
+
+
+
+    <!-- 🎵 REPRODUCTOR DE MÚSICA MEJORADO -->
+
+    <div class="music-player" id="musicPlayer">
+
+        <div class="player-panel" id="playerPanel">
+            <div class="player-header">
+                <h3>Nuestra Playlist 💕</h3>
+                <button class="close-player" onclick="togglePlayer()">✕</button>
+            </div>
+
+            <div class="now-playing">
+                <div class="song-info">
+                    <p class="song-title" id="currentSong">Selecciona una canción</p>
+                    <p class="song-artist" id="currentArtist"></p>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <span class="time" id="currentTime">0:00</span>
+                <input type="range" class="progress-bar" id="progressBar" min="0" max="100" value="0">
+                <span class="time" id="duration">0:00</span>
+            </div>
+
+            <div class="player-controls">
+                <button onclick="prevSong()" class="control-btn">⏮</button>
+                <button onclick="toggleMusic()" class="control-btn play-btn" id="playBtn">▶️</button>
+                <button onclick="nextSong()" class="control-btn">⏭</button>
+            </div>
+
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" class="volume-bar" id="volumeBar" min="0" max="100" value="70">
+            </div>
+
+            <div class="playlist">
+                <h4>Canciones</h4>
+                <div class="playlist-songs" id="playlistSongs">
+                    <!-- Se llena dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- 🎵 MINI REPRODUCTOR FLOTANTE -->
+    <div id="miniPlayer" class="mini-player-float">
+        <div class="mini-player-content">
+            <!-- Botón Play/Pause -->
+            <button class="mini-play-btn" id="miniPlayBtn" onclick="event.stopPropagation(); toggleMusic()">
+                ▶️
+            </button>
+
+            <div class="mini-player-icon">🎵</div>
+
+            <div class="mini-player-info" onclick="togglePlayer()">
+                <div class="mini-song-title" id="miniSongTitle">Cargando...</div>
+                <div class="mini-song-time" id="miniSongTime">0:00 / 0:00</div>
+            </div>
+        </div>
+        <button class="mini-close-btn" onclick="event.stopPropagation(); hideMiniPlayer()">✕</button>
+    </div>
+
+    <!-- Botón de cambio de tema -->
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- 🖼️ LIGHTBOX PARA GALERÍA -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <button class="lightbox-prev" onclick="prevLightboxImage()">‹</button>
+            <button class="lightbox-next" onclick="nextLightboxImage()">›</button>
+
+            <div class="lightbox-image-container">
+                <img id="lightboxImage" src="" alt="Foto">
+                <div class="lightbox-caption" id="lightboxCaption"></div>
+            </div>
+
+            <div class="lightbox-counter" id="lightboxCounter">1 / 16</div>
+
+            <!-- Thumbnails -->
+            <div class="lightbox-thumbnails" id="lightboxThumbnails"></div>
+        </div>
+    </div>
+
+    <audio id="music">
+
+        <audio id="music">
+            <source src="" type="audio/mpeg">
+        </audio>
+
+        <script src="script.js"></script>
+        <script src="music-player.js"></script>
 </body>
+
 </html>
