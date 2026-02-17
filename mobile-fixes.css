@@ -1,182 +1,171 @@
-/* 📱 CORRECCIONES MÓVIL CRÍTICAS */
+/* 📱 FIX MÓVIL COMPLETO - VERSIÓN 2 */
 
-/* Asegurar que nada se desborde */
+/* ========================================
+   PREVENIR OVERFLOW Y ASEGURAR SCROLL
+   ======================================== */
+
 * {
-    max-width: 100%;
+    box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: hidden !important;
+html {
     width: 100vw;
     max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
 }
 
 body {
     width: 100vw;
     max-width: 100vw;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
-/* Pantallas */
+/* CRÍTICO: Asegurar que las pantallas permitan scroll */
 .screen {
+    position: absolute !important;
+    inset: 0;
     width: 100vw;
     max-width: 100vw;
-    overflow-x: hidden;
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: flex-start; /* Cambiado de center */
+    align-items: flex-start; /* Cambiado de center */
+    padding: 20px 0;
 }
 
-/* MÓVIL GENERAL */
+.screen.active {
+    pointer-events: auto;
+}
+
+/* Asegurar que los contenedores internos no bloqueen scroll */
+.card,
+.letter-card,
+.gallery-container,
+.counter-container,
+.coupon-container,
+.menu-container,
+.welcome-container {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+}
+
+/* ========================================
+   MÓVIL - AJUSTES GENERALES
+   ======================================== */
+
 @media (max-width: 768px) {
     
-    /* Body y HTML */
+    /* Reducir font-size base */
     html {
         font-size: 14px;
     }
     
     body {
         min-height: -webkit-fill-available;
-        padding: 0;
     }
     
-    /* Tarjetas */
+    .screen {
+        min-height: -webkit-fill-available;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding-top: 20px !important;
+    }
+    
+    /* ========================================
+       TARJETAS Y CONTENEDORES
+       ======================================== */
+    
     .card {
-        padding: 25px 15px !important;
-        border-radius: 15px;
-        margin: 10px;
-        max-width: calc(100vw - 20px) !important;
-        width: calc(100vw - 20px) !important;
+        width: calc(100vw - 30px) !important;
+        max-width: calc(100vw - 30px) !important;
+        margin: 10px auto !important;
+        padding: 20px 15px !important;
+        min-height: auto !important;
+        max-height: none !important;
     }
     
     .card.wide {
-        padding: 30px 20px !important;
-        max-width: calc(100vw - 20px) !important;
-        width: calc(100vw - 20px) !important;
+        width: calc(100vw - 30px) !important;
+        max-width: calc(100vw - 30px) !important;
+        padding: 25px 15px !important;
+        overflow-y: visible !important;
+        max-height: none !important;
     }
     
-    /* Títulos */
-    h1 {
+    /* ========================================
+       PANTALLA DE BIENVENIDA
+       ======================================== */
+    
+    .welcome-container {
+        padding: 20px 15px !important;
+        min-height: 100vh;
+    }
+    
+    .welcome-content {
+        padding: 20px 15px !important;
+    }
+    
+    .main-title {
         font-size: 1.8rem !important;
     }
     
-    h2 {
+    .line-1, .line-2, .line-3 {
         font-size: 1.5rem !important;
     }
     
-    h3 {
-        font-size: 1.2rem !important;
-    }
-    
-    /* Botones */
-    button {
+    .welcome-message {
         font-size: 0.95rem !important;
-        padding: 12px 24px !important;
-        min-height: 44px;
-        min-width: 44px;
     }
     
-    /* LIBRO 3D - MÓVIL */
-    .book-container {
-        width: 100%;
-        max-width: 100vw;
-        padding: 0 10px;
-        overflow: visible;
+    .welcome-btn-new {
+        width: 90%;
+        max-width: 280px;
+        padding: 14px 28px !important;
+        font-size: 1rem !important;
     }
     
-    .book-3d {
-        width: 95vw !important;
-        max-width: 350px !important;
-        height: 480px !important;
-        margin: 0 auto;
-    }
+    /* ========================================
+       MENÚ DE SOBRES
+       ======================================== */
     
-    .book-cover {
-        font-size: 0.9rem;
-    }
-    
-    .book-cover h2 {
-        font-size: 1.5rem !important;
-    }
-    
-    .book-cover p {
-        font-size: 0.9rem !important;
-    }
-    
-    .book-pages {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .book-page {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .page-content-inner {
+    .menu-container {
         padding: 20px 15px !important;
-        font-size: 0.85rem !important;
-        overflow-y: auto;
-        max-height: 100%;
+        min-height: 100vh;
     }
     
-    .page-content-inner h3 {
-        font-size: 1.3rem !important;
-        margin-bottom: 12px;
+    .menu-title {
+        font-size: 2rem !important;
     }
     
-    /* Carta dentro del libro */
-    .letter-text {
-        font-size: 0.9rem !important;
-        line-height: 1.6;
-    }
-    
-    /* Mini galería en libro */
-    .mini-gallery-book {
-        gap: 8px !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    
-    .mini-gallery-book img {
-        height: 100px !important;
-    }
-    
-    /* Razones y promesas */
-    .reasons-list p,
-    .promises-text p {
-        font-size: 0.85rem !important;
-        margin-bottom: 8px;
-    }
-    
-    /* Navegación del libro */
-    .book-navigation {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-top: 20px;
-    }
-    
-    .nav-btn {
-        width: 100% !important;
-        max-width: 300px;
-        margin: 0 auto;
+    .menu-subtitle {
         font-size: 0.95rem !important;
     }
     
-    .page-indicator {
-        order: -1;
-        margin-bottom: 10px;
-        font-size: 0.9rem;
-    }
-    
-    /* SOBRES - MÓVIL */
     .envelopes-grid {
         grid-template-columns: 1fr !important;
-        gap: 20px;
-        padding: 0 15px;
+        gap: 20px !important;
         max-width: 350px;
         margin: 0 auto;
+        padding: 0 15px;
     }
     
     .envelope-card {
-        max-width: 100%;
-        min-height: 240px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 220px !important;
+        padding: 18px 15px !important;
     }
     
     .envelope-3d {
@@ -184,138 +173,389 @@ body {
         height: 55px !important;
     }
     
-    .envelope-icon {
-        font-size: 1.3rem !important;
+    /* ========================================
+       LIBRO 3D - CRÍTICO
+       ======================================== */
+    
+    /* FIX: El libro estaba causando overflow */
+    .book-container {
+        width: 100%;
+        max-width: 100vw;
+        padding: 0 10px;
+        margin: 20px 0;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
-    /* GALERÍA - MÓVIL */
+    .book-3d,
+    .vintage-book {
+        width: 90vw !important;
+        max-width: 340px !important;
+        height: 460px !important;
+        margin: 0 auto 20px;
+        transform-origin: center center;
+    }
+    
+    /* Asegurar que el libro no se salga */
+    .book-3d.opened,
+    .vintage-book.opened {
+        transform: none !important;
+    }
+    
+    .book-cover {
+        font-size: 0.85rem !important;
+    }
+    
+    .book-cover h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .book-cover p {
+        font-size: 0.85rem !important;
+    }
+    
+    .heart-icon {
+        font-size: 2rem !important;
+    }
+    
+    /* Contenido de páginas */
+    .page-content-inner {
+        padding: 18px 12px !important;
+        font-size: 0.85rem !important;
+        line-height: 1.6;
+        overflow-y: auto;
+        max-height: 100%;
+    }
+    
+    .page-content-inner h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .letter-text,
+    .vintage-letter-text {
+        font-size: 0.85rem !important;
+        line-height: 1.6;
+    }
+    
+    /* Mini galería en libro */
+    .mini-gallery-book {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+    }
+    
+    .mini-gallery-book img {
+        height: 90px !important;
+    }
+    
+    /* Razones y promesas */
+    .reasons-list p,
+    .promises-text p {
+        font-size: 0.8rem !important;
+        line-height: 1.5;
+        margin-bottom: 6px;
+    }
+    
+    .final-promise {
+        font-size: 0.9rem !important;
+        margin-top: 12px;
+    }
+    
+    /* Epílogo */
+    .epilogue-text {
+        font-size: 1.1rem !important;
+        line-height: 1.6;
+    }
+    
+    .epilogue-date {
+        font-size: 0.95rem !important;
+    }
+    
+    .epilogue-question {
+        font-size: 1rem !important;
+    }
+    
+    .open-first-letter-btn {
+        width: 90%;
+        max-width: 260px;
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+        margin: 15px auto !important;
+    }
+    
+    /* Navegación del libro - CRÍTICO */
+    .book-navigation {
+        width: 100% !important;
+        max-width: 340px;
+        margin: 20px auto !important;
+        padding: 0 10px;
+        display: flex !important;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .page-indicator {
+        width: 100%;
+        text-align: center;
+        order: -1;
+        font-size: 0.9rem !important;
+        margin-bottom: 8px;
+    }
+    
+    /* Botón de volver - ASEGURAR QUE SE VEA */
+    .back-btn-new,
+    .back-menu {
+        width: 90% !important;
+        max-width: 280px !important;
+        margin: 20px auto !important;
+        padding: 14px 28px !important;
+        font-size: 0.95rem !important;
+        display: block !important;
+        position: relative !important;
+        z-index: 100 !important;
+    }
+    
+    /* ========================================
+       GALERÍA DE FOTOS
+       ======================================== */
+    
     .gallery-container {
         padding: 20px 10px !important;
+        min-height: auto;
     }
     
     .gallery-header {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
+        padding: 0 10px;
     }
     
     .gallery-title {
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
+    }
+    
+    .gallery-subtitle {
+        font-size: 0.95rem !important;
     }
     
     .photos-grid-new {
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 10px !important;
+        gap: 8px !important;
         padding: 0 10px;
-    }
-    
-    .polaroid-frame {
-        padding: 8px 8px 28px 8px !important;
-    }
-    
-    .polaroid-frame img {
-        height: 100px !important;
-    }
-    
-    .polaroid-caption {
-        font-size: 0.8rem !important;
-        margin-top: 6px;
-    }
-    
-    /* CONTADOR - MÓVIL */
-    .counter-container {
-        padding: 20px 10px !important;
-    }
-    
-    .counter-header {
         margin-bottom: 30px;
     }
     
+    .polaroid-frame {
+        padding: 6px 6px 24px 6px !important;
+    }
+    
+    .polaroid-frame img {
+        height: 90px !important;
+    }
+    
+    .polaroid-caption {
+        font-size: 0.75rem !important;
+        margin-top: 4px;
+    }
+    
+    .gallery-message {
+        font-size: 1rem !important;
+        padding: 0 15px;
+    }
+    
+    /* ========================================
+       CONTADOR
+       ======================================== */
+    
+    .counter-container {
+        padding: 20px 10px !important;
+        min-height: auto;
+    }
+    
+    .counter-header {
+        margin-bottom: 25px;
+    }
+    
+    .infinity-symbol {
+        font-size: 3rem !important;
+    }
+    
     .counter-title {
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
+    }
+    
+    .counter-subtitle {
+        font-size: 0.95rem !important;
     }
     
     .epic-counter-new {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px !important;
+        gap: 12px !important;
         padding: 0 10px;
+        margin-bottom: 25px;
     }
     
     .counter-circle {
-        width: 100px !important;
-        height: 100px !important;
+        width: 90px !important;
+        height: 90px !important;
     }
     
     .counter-circle svg {
-        width: 100px !important;
-        height: 100px !important;
+        width: 90px !important;
+        height: 90px !important;
     }
     
     .progress-ring circle {
-        r: 42 !important;
-        cx: 50 !important;
-        cy: 50 !important;
+        r: 38 !important;
+        cx: 45 !important;
+        cy: 45 !important;
     }
     
     .counter-number {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
     }
     
     .counter-label {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
     }
     
-    /* CUPÓN - MÓVIL */
+    .counter-message p {
+        font-size: 1.1rem !important;
+    }
+    
+    /* ========================================
+       CUPÓN
+       ======================================== */
+    
+    #coupon .screen {
+        align-items: flex-start !important;
+        padding-top: 20px !important;
+    }
+    
     .coupon-container {
         padding: 20px 10px !important;
+        min-height: auto;
+    }
+    
+    .coupon-header {
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+    
+    .gift-icon {
+        font-size: 3rem !important;
+    }
+    
+    .coupon-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .coupon-subtitle {
+        font-size: 0.95rem !important;
     }
     
     .coupons-grid {
         grid-template-columns: 1fr !important;
         gap: 15px;
         padding: 0 10px;
+        margin-bottom: 25px;
     }
     
+    /* Cupones canjeados */
+    .coupon-mini-card {
+        padding: 18px 15px !important;
+    }
+    
+    .coupon-mini-icon {
+        font-size: 2.2rem !important;
+    }
+    
+    .coupon-mini-card h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Cupón del amor */
     .coupon-item.active-coupon {
         max-width: 100% !important;
+        width: 100%;
     }
     
     .vip-love-coupon {
         padding: 25px 15px !important;
+        margin: 0;
+    }
+    
+    .coupon-seal-special {
+        top: -20px;
+        right: 10px;
     }
     
     .seal-circle-special {
-        width: 60px !important;
-        height: 60px !important;
+        width: 55px !important;
+        height: 55px !important;
     }
     
     .seal-icon-special {
+        font-size: 1.5rem !important;
+    }
+    
+    .seal-text-special {
+        font-size: 0.55rem !important;
+    }
+    
+    .heart-burst {
         font-size: 1.8rem !important;
     }
     
     .love-coupon-header h2 {
-        font-size: 1.6rem !important;
+        font-size: 1.5rem !important;
     }
     
-    .heart-burst {
-        font-size: 2rem !important;
+    .love-intro {
+        font-size: 0.85rem !important;
     }
     
     .love-benefits li {
         padding: 8px 12px !important;
-        font-size: 0.9rem !important;
+        margin-bottom: 8px;
+        gap: 10px;
     }
     
     .love-icon {
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .love-benefits li span:last-child {
+        font-size: 0.85rem !important;
     }
     
     .love-validity {
         grid-template-columns: 1fr !important;
         gap: 12px;
         padding: 15px !important;
+        margin-bottom: 20px;
     }
     
     .validity-icon {
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
+    }
+    
+    .validity-title {
+        font-size: 0.75rem !important;
+    }
+    
+    .validity-value {
+        font-size: 0.95rem !important;
     }
     
     .love-code-box {
@@ -323,101 +563,113 @@ body {
     }
     
     .love-code-text {
-        font-size: 1.1rem !important;
-        letter-spacing: 2px;
+        font-size: 1rem !important;
+        letter-spacing: 1.5px;
+    }
+    
+    .love-final-message p {
+        font-size: 1rem !important;
+        padding: 0 10px;
     }
     
     .save-love-btn {
-        font-size: 1rem !important;
+        width: 100%;
         padding: 14px !important;
+        font-size: 0.95rem !important;
     }
     
-    /* CUPONES CANJEADOS */
-    .coupon-mini-card {
-        padding: 20px 15px !important;
+    .coupon-special-note p {
+        font-size: 0.9rem !important;
+        padding: 0 10px;
     }
     
-    .coupon-mini-icon {
-        font-size: 2.5rem !important;
-    }
+    /* ========================================
+       LIBRO VINTAGE
+       ======================================== */
     
-    /* LIBRO VINTAGE - MÓVIL */
-    .vintage-book {
-        width: 95vw !important;
-        max-width: 350px !important;
-        height: 480px !important;
-    }
-    
-    .vintage-page .page-content-inner {
-        padding: 20px 15px !important;
-    }
-    
-    .vintage-letter-text {
-        font-size: 0.85rem !important;
-        line-height: 1.7;
+    .first-letter-date {
+        font-size: 0.9rem !important;
+        padding: 0 10px;
     }
     
     .vintage-timeline {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
         padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .timeline-icon {
+        font-size: 1.6rem !important;
+    }
+    
+    .timeline-point p {
+        font-size: 0.85rem !important;
     }
     
     .timeline-line {
         width: 2px !important;
-        height: 40px !important;
+        height: 35px !important;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), #ff6b9d);
     }
     
-    /* EPÍLOGO */
-    .epilogue-text {
+    /* ========================================
+       OPTIMIZACIONES GENERALES
+       ======================================== */
+    
+    /* Títulos generales */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    h3 {
         font-size: 1.2rem !important;
     }
     
-    .epilogue-question {
-        font-size: 1.1rem !important;
-    }
-    
-    .open-first-letter-btn {
-        font-size: 1rem !important;
-        padding: 12px 24px !important;
-        width: 90%;
-        max-width: 280px;
-    }
-    
-    /* Botón volver general */
-    .back-btn-new,
-    .back-menu {
-        width: 90% !important;
-        max-width: 280px;
-        margin: 20px auto !important;
-        font-size: 0.95rem !important;
+    /* Botones generales */
+    button {
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
     }
     
     /* Prevenir zoom en inputs */
-    input, textarea, select {
+    input, textarea, select, button {
         font-size: 16px !important;
     }
     
-    /* Mejorar tap targets */
-    button, a, .envelope-card, .photo-polaroid {
+    /* Mejorar rendimiento */
+    * {
         -webkit-tap-highlight-color: transparent;
+    }
+    
+    .envelope-card,
+    .photo-polaroid,
+    .book-cover,
+    button {
         -webkit-user-select: none;
         user-select: none;
     }
 }
 
-/* MÓVIL MUY PEQUEÑO */
-@media (max-width: 380px) {
+/* ========================================
+   MÓVIL MUY PEQUEÑO (<400px)
+   ======================================== */
+
+@media (max-width: 400px) {
     html {
         font-size: 13px;
     }
     
     .book-3d,
     .vintage-book {
-        width: 98vw !important;
-        max-width: 320px !important;
-        height: 450px !important;
+        width: 95vw !important;
+        max-width: 310px !important;
+        height: 440px !important;
     }
     
     .photos-grid-new {
@@ -427,48 +679,86 @@ body {
     .epic-counter-new {
         grid-template-columns: 1fr !important;
     }
+    
+    .envelopes-grid {
+        max-width: 300px;
+    }
 }
 
-/* GESTOS TÁCTILES */
+/* ========================================
+   GESTOS TÁCTILES
+   ======================================== */
+
 @media (hover: none) and (pointer: coarse) {
-    /* Eliminar hover, usar active */
+    
+    /* Eliminar todos los hover, usar active */
     .envelope-card:hover,
-    .photo-polaroid:hover .polaroid-frame,
+    .polaroid-frame:hover,
     button:hover,
-    .nav-btn:hover {
+    .nav-btn:hover,
+    .book-cover:hover,
+    .welcome-btn-new:hover,
+    .back-btn-new:hover,
+    .back-menu:hover {
         transform: none !important;
+        box-shadow: none !important;
     }
     
+    /* Active states */
     .envelope-card:active {
         transform: translateY(-5px) scale(1.02) !important;
+        transition: all 0.1s ease;
     }
     
     .photo-polaroid:active .polaroid-frame {
         transform: translateY(-8px) scale(1.03) rotate(0deg) !important;
+        transition: all 0.1s ease;
     }
     
     button:active,
-    .nav-btn:active {
-        transform: translateY(-2px) scale(0.98) !important;
-    }
-    
-    /* Libro táctil */
-    .book-cover:hover {
-        transform: none !important;
+    .nav-btn:active,
+    .welcome-btn-new:active,
+    .back-btn-new:active,
+    .back-menu:active {
+        transform: scale(0.96) !important;
+        transition: all 0.1s ease;
     }
     
     .book-cover:active {
         transform: scale(0.98) !important;
+        transition: all 0.1s ease;
     }
 }
 
-/* FIX DE SCROLL EN iOS */
+/* ========================================
+   FIX PARA iOS SAFARI
+   ======================================== */
+
 @supports (-webkit-touch-callout: none) {
     body {
         min-height: -webkit-fill-available;
+        height: -webkit-fill-available;
     }
     
     .screen {
         min-height: -webkit-fill-available;
+    }
+    
+    .screen.active {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* ========================================
+   SCROLL SUAVE EN MÓVIL
+   ======================================== */
+
+@media (max-width: 768px) {
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .screen {
+        scroll-behavior: smooth;
     }
 }
